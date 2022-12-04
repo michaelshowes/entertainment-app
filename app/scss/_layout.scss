@@ -1,0 +1,28 @@
+.page-container {
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+  // overflow: hidden;
+  // overflow-x: auto;
+
+  @include from($tablet-break) {
+    padding: 24px 0 24px 24px;
+  }
+
+  @include from($desktop-break) {
+    display: flex;
+    padding: 32px;
+  }
+
+  main {
+    width: 100%;
+
+    @include to(6) {
+      padding: 0 0 0 16px;
+    }
+
+    @include from($desktop-break) {
+      padding: 0 32px;
+    }
+  }
+}

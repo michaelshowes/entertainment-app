@@ -1,0 +1,10 @@
+// Rem Units
+//
+// Convert a pixel value to rem, relative to the font size of the root element.
+//
+// $pixel = null - The value you want to convert to rem
+//
+// Styleguide Sass Functions.Rem Units
+@function rem($pixel) {
+  @return math.div($pixel, $base-font-size) * 1rem;
+}

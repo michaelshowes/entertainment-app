@@ -1,0 +1,26 @@
+.search {
+  display: flex;
+  margin-bottom: 24px;
+  width: 100%;
+
+  @include from($tablet-break) {
+    padding-right: 24px;
+  }
+
+  @include from($desktop-break) {
+    padding-right: 64px;
+  }
+
+  svg {
+    margin-right: 16px;
+  }
+
+  form {
+    width: 100%;
+
+    input {
+      margin: 5px 0 0;
+      width: 100%;
+    }
+  }
+}

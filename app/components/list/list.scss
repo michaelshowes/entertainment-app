@@ -1,0 +1,79 @@
+.list {
+  margin-bottom: 24px;
+
+  @include to(6) {
+    width: calc(100% - 16px);
+  }
+
+  @include from($tablet-break) {
+    width: calc(100% - 24px);
+  }
+
+  @include from($desktop-break) {
+    width: calc(100% - 64px);
+  }
+
+  &-thumbnail-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(164px, 1fr));
+    gap: 16px;
+
+    @include from($tablet-break) {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+    }
+
+    @include from($desktop-break) {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+    }
+  }
+}
+
+.trending {
+
+  &-thumbnail-container {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 16px;
+    overflow-x: auto;
+    padding: 0 16px 0 0 ;
+    scrollbar-width: none; // Hide scrollbar in FF
+
+    @include from($tablet-break) {
+      padding: 0 24px 0 0 ;
+      gap: 40px;
+    }
+
+    @include from($desktop-break) {
+      padding: 0 64px 0 0 ;
+    }
+
+    &.is-trending {
+
+      .media {
+
+        .thumbnail {
+          width: 240px;
+          height: 140px;
+          margin-bottom: 0;
+
+          @include from($tablet-break) {
+            width: 470px;
+            height: 230px;
+          }
+        }
+
+        .details {
+          background-image: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 100%);
+          padding: 16px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+}

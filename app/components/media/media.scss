@@ -1,0 +1,89 @@
+.media {
+  position: relative;
+
+  &.is-trending {
+
+    .thumbnail {
+      width: 240px;
+      height: 140px;
+      margin-bottom: 0;
+
+      @include from($tablet-break) {
+        width: 470px;
+        height: 230px;
+      }
+    }
+
+    .details {
+      background-image: linear-gradient(0deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 100%);
+      padding: 16px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      border-radius: 8px;
+    }
+  }
+
+  .bookmark {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 32px;
+    height: 32px;
+    background-color: rgba(black, .5);
+    border-radius: 50%;
+    z-index: 1;
+
+    svg {
+      position: relative;
+      top: 1px;
+    }
+  }
+
+  .thumbnail {
+    position: relative;
+    width: 100%;
+    height: 110px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 8px;
+
+    @include from($tablet-break) {
+      height: 140px;
+    }
+
+    @include from($desktop-break) {
+      height: 174px;
+    }
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .details {
+    @include font-clamp(11px, 2.8vw, 13px);
+
+    .meta {
+      margin-bottom: 4px;
+      display: flex;
+      opacity: .75;
+
+      .category {
+
+        &-icon {
+          margin-right: 4px;
+        }
+      }
+
+      .bullet {
+        margin: 0 6px;
+      }
+    }
+
+    .title {
+      margin-bottom: 0;
+    }
+  }
+}
